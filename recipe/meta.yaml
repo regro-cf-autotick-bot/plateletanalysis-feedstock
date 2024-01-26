@@ -1,5 +1,5 @@
 {% set name = "plateletanalysis" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plateletanalysis-{{ version }}.tar.gz
-  sha256: 71dfbfa41a55fbefde2e5da1ef957022448a384d5ef78882996c690232e87961
+  sha256: a7679ec0584824712e86a9482150b8d9cc372451460cdb6848971f53fd210eac
 
 build:
   noarch: python
