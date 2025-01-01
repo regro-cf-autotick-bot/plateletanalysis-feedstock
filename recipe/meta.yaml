@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plateletanalysis-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/plateletanalysis-{{ version }}.tar.gz
   sha256: 71dfbfa41a55fbefde2e5da1ef957022448a384d5ef78882996c690232e87961
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - dask-core >=2023.10.1
     - distributed >=2023.10.1
@@ -30,7 +30,7 @@ requirements:
     - pingouin >=0.5.3
     - ptitprince >=0.2.7
     - pyarrow >=14.0.1
-    - python >=3.7
+    - python >={{ python_min }}
     - ripser >=0.6.4
     - scikit-image >=0.22.0
     - scikit-learn >=1.3.2
@@ -48,6 +48,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/plateletanalysis
